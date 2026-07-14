@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const sqlite3 = require('sqlite3').verbose();
 const { Pool } = require('pg');
 const fs = require('fs');
 const path = require('path');
@@ -41,6 +40,7 @@ if (isPostgres) {
     ssl: { rejectUnauthorized: false } // Required for Supabase/Neon
   });
 } else {
+  const sqlite3 = require('sqlite3').verbose();
   sqliteDb = new sqlite3.Database(path.join(__dirname, 'survey.db'));
 }
 
