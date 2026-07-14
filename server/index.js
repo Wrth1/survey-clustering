@@ -250,7 +250,7 @@ app.post('/api/auth', requireAuth, (req, res) => {
   res.json({ success: true });
 });
 
-app.get('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
