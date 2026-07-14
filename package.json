@@ -2,7 +2,7 @@
   "name": "survey-voting-app",
   "version": "1.0.0",
   "scripts": {
-    "build": "cd client && npm install && npm run build && cd ../server && npm install",
+    "build": "cd client && npm install --include=dev && npm run build && cd ../server && npm install",
     "start": "cd server && node index.js"
   }
 }
